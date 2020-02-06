@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 14:23:50 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 11:12:04 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/06 02:19:41 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	char	*nsrc;
 
 	nsrc = (char *)src;
+	if (!dst && !src)
+		return (0);
 	i = 0;
 	if (dstsize == 0)
 		return (ft_strlen(src));

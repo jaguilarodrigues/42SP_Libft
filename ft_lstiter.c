@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 14:26:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/22 14:26:46 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/05 04:52:51 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/05 05:01:08 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_alpha(char *str)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
 	{
-		if (!((str[i] >= 'a' && str[i] <= 'z')
-		|| (str[i] >= 'A' && str[i] <= 'Z')))
-		{
-			return (0);
-		}
-		i++;
+		(f)(lst->content);
+		(lst) = (lst)->next;
 	}
-	return (1);
 }

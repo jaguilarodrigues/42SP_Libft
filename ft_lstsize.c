@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 14:32:59 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/22 14:33:04 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 15:21:22 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/04 15:35:42 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_tolower(char *str)
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	if (lst == NULL)
+		return (0);
+	while (lst)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] = str[i] + 32;
-		}
 		i++;
+		lst = lst->next;
 	}
-	return (str);
+	return (i);
 }

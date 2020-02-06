@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 04:07:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 02:20:51 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/03 14:55:06 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/06 00:26:06 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_isaccept(int c)
 {
-	int i;
+	return ((c >= 8 && c <= 13) || c == ' ') ? 1 : 0;
+}
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+int	ft_atoi(const char *str)
+{
+	int sinal;
+	int num;
+
+	sinal = 1;
+	num = 0;
+	while (ft_isaccept(*str))
+		str++;
+	if (*str == '-')
 	{
-		write(fd, &s[i], 1);
-		i++;
+		sinal = sinal * -1;
+		str++;
 	}
+	else if (*str == '+')
+		str++;
+	while (ft_isdigit(*str))
+	{
+		num = num * 10 + (*str - '0');
+		str++;
+	}
+	return (num * sinal);
 }

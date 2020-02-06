@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 19:05:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/29 19:00:07 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/03 23:16:20 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *ptr, int x, size_t n)
 
 	ptr2 = (unsigned char *)ptr;
 	i = 0;
-	while (*ptr2 != '\0' && i < n)
+	while (i < n)
 	{
 		*ptr2 = (unsigned char)x;
 		i++;

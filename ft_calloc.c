@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/20 19:05:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/20 19:05:45 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/03 22:58:50 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/03 23:21:48 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-typedef unsigned long size_t;
 
-void *ft_memset(void *ptr, int x, size_t n)
+#include "libft.h"
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t i;
-	unsigned char *ptr2;
+	void *p;
 
-	ptr2 = (unsigned char *)ptr;
-	i = 0;
-	while (*ptr2 != '\0' && i < n)
-	{
-		*ptr2 = (unsigned char)x;
-		i++;
-		ptr2++;
-	}
-	return ptr;
+	p = (char *)malloc(count * size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, count * size);
+	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:01:16 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 12:16:13 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/06 02:27:24 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*substring;
 	int		i;
 	int		j;
-	int		s1_len;
-	int		s2_len;
 
+	if (!s1 || !s2)
+		return (0);
 	i = 0;
 	j = 0;
-	s1_len = sizeof(s1);
-	s2_len = sizeof(s2);
-	substring = (char *)malloc((s1_len + s2_len) * sizeof(char));
+	substring = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
 	if (substring == NULL)
 		return (NULL);
 	while (s1[i] != '\0')

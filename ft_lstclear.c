@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 04:07:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 02:20:51 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 19:32:33 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/06 01:37:26 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	int i;
+	t_list	*l;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != '\0')
+	while (*lst)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		l = *lst;
+		*lst = (*lst)->next;
+		(*del)(l);
 	}
 }

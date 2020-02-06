@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 10:15:45 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/29 19:11:46 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/06 03:27:19 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
 	char	*src2;
 	char	*dst2;
-	char	aux[n];
 
-	i = 0;
 	src2 = (char *)src;
-	dst2 = (char *)dst;
-	while (i < n)
+	dst2 = dst;
+	if (dst > src)
 	{
-		aux[i] = src2[i];
-		i++;
+		dst2 += n - 1;
+		src2 += n - 1;
+		while (n >= 1)
+		{
+			*dst2 = *src2;
+			dst2--;
+			src2--;
+			n--;
+		}
 	}
-	i = 0;
-	while (i < n)
-	{
-		dst2[i] = aux[i];
-		i++;
-	}
+	else
+		ft_memcpy(dst, src, n);
 	return (dst);
 }

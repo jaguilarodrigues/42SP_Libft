@@ -6,11 +6,11 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 23:42:19 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/29 23:46:18 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/05 23:48:23 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return (!(c >= 0 && c <= 177)) ? 0 : 1;
+	return ((c >= 0 && c <= 0177) ? 1 : 0);
 }

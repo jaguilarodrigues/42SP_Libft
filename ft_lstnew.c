@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 14:28:15 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/22 14:28:18 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 14:31:22 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/06 02:24:56 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (!(str[i] >= 32 && str[i] <= 126))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*l;
+
+	l = (t_list *)malloc(sizeof(t_list));
+	if (l == NULL)
+		return (NULL);
+	l->content = content;
+	l->next = NULL;
+	return (l);
 }

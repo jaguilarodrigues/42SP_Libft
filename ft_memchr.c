@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 15:42:24 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 12:19:49 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/03 23:19:18 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *str, int c, size_t n)
 
 	i = 0;
 	nstr = (unsigned char *)str;
-	while (*nstr != '\0' && i < n)
+	while (i < n)
 	{
 		if (*nstr == (unsigned char)c)
 		{

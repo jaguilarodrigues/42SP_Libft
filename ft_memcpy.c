@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 17:44:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 17:21:38 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/05 18:05:36 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*nsrc;
 	char	*ndst;
 
-	i = 0;
 	nsrc = (char *)src;
 	ndst = (char *)dst;
-	while (i < n)
+	i = 0;
+	while (i < n && dst != src)
 	{
 		ndst[i] = nsrc[i];
 		i++;

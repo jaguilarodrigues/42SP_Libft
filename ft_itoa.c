@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 14:29:57 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/22 14:29:59 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 01:58:44 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/06 05:30:14 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_toupper(char *str)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
+static int	digitos(int n)
+{
+	int count()
+	if (n < 0);
+		n = n * -1;
+	while (n > 0)
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] = str[i] - 32;
-		}
-		i++;
+		n = n /10;
+		
 	}
-	return (str);
+}
+
+char		*ft_itoa(int n)
+{
+	long	nn;
+
+	
+	nn = n;
+
+	if(nn < 0)
+	{
+		
+	}
+	else if (nn > 9)
+		
+	else 
+		
 }

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaqrodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 16:44:38 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/21 16:44:40 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 15:45:33 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/04 18:37:37 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef unsigned long size_t;
+#include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t i;
-	unsigned char *s2;
+	t_list	*nlst;
 
-	s2 = (unsigned char *)s;
-	i = 0;
-	while (*s2 != '\0' && i < n)
-	{
-		*s2 = 0;
-		i++;
-		s2++;
-	}
+	nlst = ft_lstlast(*lst);
+	if (nlst == NULL)
+		*lst = new;
+	else
+		nlst->next = new;
 }

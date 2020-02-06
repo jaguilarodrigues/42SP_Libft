@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 04:07:43 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 02:20:51 by jaqrodri         ###   ########.fr       */
+/*   Created: 2020/02/04 00:50:44 by jaqrodri          #+#    #+#             */
+/*   Updated: 2020/02/06 02:22:40 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
+	int				slen;
+	unsigned int	i;
+	char			*ms;
 
-	if (!s)
-		return ;
+	if (!s || !f)
+		return (NULL);
 	i = 0;
+	slen = ft_strlen(s);
+	ms = (char *)malloc((slen * sizeof(*s)) + 1);
+	if (ms == NULL)
+		return (NULL);
 	while (s[i] != '\0')
 	{
-		write(fd, &s[i], 1);
+		ms[i] = (*f)(i, s[i]);
 		i++;
 	}
+	ms[i] = '\0';
+	return (ms);
 }

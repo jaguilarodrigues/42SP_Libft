@@ -6,13 +6,14 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/29 14:54:07 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/01/29 22:28:20 by jaqrodri         ###   ########.fr        #
+#    Updated: 2020/02/05 01:00:37 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRCS =	ft*.c
-OBJECTS = ft*.o
+#OBJECTS = ft*.o
+OBJECTS = $(SRCS:.c=.o)
 INCLUDES = ./
 all: $(NAME)
 $(NAME):
