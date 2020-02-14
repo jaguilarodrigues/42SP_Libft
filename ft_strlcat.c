@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 01:13:58 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 15:50:32 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/14 01:56:42 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	j = 0;
 	i = 0;
-	while (dst[j] != '\0')
-		j++;
-	while (src[i] && (i + 1 + j) < dstsize)
+	j = ft_strlen(dst);
+	while (src[i] && (i + j + 1) < dstsize && dstsize > 0)
 	{
 		dst[i + j] = src[i];
 		i++;
 	}
-	dst[i + j] = '\0';
+	if ((j + i) <= dstsize)
+		dst[i + j] = '\0';
 	while (src[i] != '\0')
 		i++;
 	if (dstsize < j)
 		return (dstsize + i);
-	return (j + i);
+	else
+		return (j + i);
 }

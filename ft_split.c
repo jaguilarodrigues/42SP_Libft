@@ -6,45 +6,51 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 03:38:36 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 13:46:13 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/14 01:46:20 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-#include<stdio.h>
-
-int			ft_strchr_len(const char *s, char c)
+char	*ft_strbuild(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*substring;
+	size_t	cont;
 
-	i = 0;
-	if ((char)c == '\0')
-		return (i);
-	while (*s != '\0')
+	cont = 0;
+	if (!s)
+		return (NULL);
+	substring = (char *)malloc((len + 1) * sizeof(char));
+	if (substring == NULL)
+		return (NULL);
+	while (cont < len)
 	{
-		if (*s == c)
-			return (i);
-		i++;
-		s++;
+		substring[cont] = s[start + cont];
+		cont++;
 	}
-	return (i);
+	substring[cont] = '\0';
+	return (substring);
 }
 
-int			ft_count_words(const char *s, char c)
+int		ft_count_words(const char *s, char c)
 {
 	char	*f;
 	int		i;
 
 	f = (char	*)s;
 	i = 0;
-	while(*f)
+	while (*f != '\0')
 	{
 		if (*f != c)
 		{
-			f = f + ft_strchr_len(f, c);
+			while (*f != c && *f != '\0')
+			{
+				f++;
+			}
 			i++;
-		}else
+		}
+		else
 		{
 			f++;
 		}
@@ -52,16 +58,52 @@ int			ft_count_words(const char *s, char c)
 	return (i);
 }
 
-char		**ft_split(char const *s, char c)
+void	ft_allocword(char const *s, char c, int count_words, char **new_word)
 {
-	char **new_word;
-	
-	new_word = (char *)malloc(ft_count_words(s,c) * sizeof(char));
+	char	*a;
+	char	*f;
+	int		i;
+	int		j;
 
-	
+	a = (char *)s;
+	i = 0;
+	while (i < count_words)
+		while (*a != '\0')
+		{
+			if (*a != c)
+			{
+				j = 0;
+				f = a;
+				while (*a != c && *a != '\0')
+				{
+					j++;
+					a++;
+				}
+				new_word[i++] = ft_strbuild(f, 0, j);
+			}
+			else
+				a++;
+		}
+	new_word[i] = NULL;
 }
 
-int main()
+char	**ft_split(char const *s, char c)
 {
-	printf("%d", ft_count_words("BBBABDSARRB",'A'));
+	char	**new_word;
+	int		count_words;
+
+	if (!s)
+		return (NULL);
+	if (c == '\0')
+	{
+		new_word = (char **)malloc(sizeof(char *));
+		*new_word = (char *)s;
+		return (new_word);
+	}
+	count_words = ft_count_words(s, c);
+	new_word = (char **)malloc((count_words + 1) * sizeof(char *));
+	if (new_word == NULL)
+		return (NULL);
+	ft_allocword(s, c, count_words, new_word);
+	return (new_word);
 }
