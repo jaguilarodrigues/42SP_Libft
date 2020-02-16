@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 16:44:38 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 11:07:29 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/14 14:05:55 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_bzero(void *b, size_t n)
 {
-	ft_memset(s, 0, n);
+	return (ft_memset(b, 0, n));
 }

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 19:32:33 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 01:37:26 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/15 01:18:16 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	{
 		l = *lst;
 		*lst = (*lst)->next;
-		(*del)(l);
+		ft_lstdelone(l, del);
 	}
 }

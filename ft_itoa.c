@@ -6,54 +6,57 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 01:58:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/13 16:26:07 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/16 13:34:17 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int		cont_num(int n)
+static int		cont_num(int n)
 {
-	int		i;
+	int				i;
+	unsigned int	nb;
 
 	i = 0;
 	if (n < 0)
 	{
 		i++;
-		n *= -1;
+		nb = n * (-1);
 	}
-	while (n > 0)
+	else
+		nb = n;
+	while (nb > 0)
 	{
-		n = n / 10;
+		nb = nb / 10;
 		i++;
 	}
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*s;
-	int		num;
+	char			*s;
+	int				num;
+	unsigned int	nb;
 
 	num = cont_num(n);
 	s = (char *)malloc((num + 1) * sizeof(char));
 	if (s == NULL)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_substr("-2147483648", 0, 11));
 	if (n == 0)
 		return (ft_substr("0", 0, 1));
 	if (n < 0)
 	{
 		s[0] = '-';
-		n = n * (-1);
+		nb = n * (-1);
 	}
+	else
+		nb = n;
 	s[num--] = '\0';
-	while (num > 0 || n > 0)
+	while (num > 0 || nb > 0)
 	{
-		s[num] = (n % 10) + '0';
-		n = n / 10;
+		s[num] = (nb % 10) + '0';
+		nb = nb / 10;
 		num--;
 	}
 	return (s);

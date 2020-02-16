@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 18:01:16 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/14 02:07:57 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/15 02:53:38 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	sub = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (sub == NULL)
-		return (NULL);
+	if (!sub)
+		return (0);
 	while (s1[i] != '\0')
 	{
 		sub[i] = s1[i];

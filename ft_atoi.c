@@ -6,18 +6,18 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 14:55:06 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/06 00:26:06 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/14 16:00:31 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isaccept(int c)
+static int	ft_isaccept(int c)
 {
 	return ((c >= 8 && c <= 13) || c == ' ') ? 1 : 0;
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int sinal;
 	int num;

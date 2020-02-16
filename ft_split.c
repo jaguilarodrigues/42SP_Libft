@@ -6,14 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 03:38:36 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/14 01:46:20 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2020/02/15 18:11:32 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strbuild(char const *s, unsigned int start, size_t len)
+static char	*ft_strbuild(char const *s, unsigned int start, size_t len)
 {
 	char	*substring;
 	size_t	cont;
@@ -33,7 +32,7 @@ char	*ft_strbuild(char const *s, unsigned int start, size_t len)
 	return (substring);
 }
 
-int		ft_count_words(const char *s, char c)
+static int	ft_count_words(const char *s, char c)
 {
 	char	*f;
 	int		i;
@@ -58,7 +57,8 @@ int		ft_count_words(const char *s, char c)
 	return (i);
 }
 
-void	ft_allocword(char const *s, char c, int count_words, char **new_word)
+static void	ft_allocword(char const *s, char c, int count_words,
+char **new_word)
 {
 	char	*a;
 	char	*f;
@@ -87,19 +87,13 @@ void	ft_allocword(char const *s, char c, int count_words, char **new_word)
 	new_word[i] = NULL;
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**new_word;
 	int		count_words;
 
 	if (!s)
 		return (NULL);
-	if (c == '\0')
-	{
-		new_word = (char **)malloc(sizeof(char *));
-		*new_word = (char *)s;
-		return (new_word);
-	}
 	count_words = ft_count_words(s, c);
 	new_word = (char **)malloc((count_words + 1) * sizeof(char *));
 	if (new_word == NULL)
