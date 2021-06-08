@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 14:55:06 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/14 16:00:31 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 21:51:59 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 static int	ft_isaccept(int c)
 {
-	return ((c >= 8 && c <= 13) || c == ' ') ? 1 : 0;
+	if ((c >= 8 && c <= 13) || c == ' ')
+		return (1);
+	return (0);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int sinal;
-	int num;
+	int	sinal;
+	int	num;
 
 	sinal = 1;
 	num = 0;

@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 12:33:45 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 15:49:55 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:21:15 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	{
 		if (*s == (char)c)
 		{
-			return ((char	*)s);
+			return ((char *)s);
 		}
 		s++;
 	}

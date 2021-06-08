@@ -6,11 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 14:32:59 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 00:41:52 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:09:51 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return (c >= 'A' && c <= 'Z') ? c + 32 : c;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

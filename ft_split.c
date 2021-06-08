@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 03:38:36 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/15 18:11:32 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:47:45 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_count_words(const char *s, char c)
 	char	*f;
 	int		i;
 
-	f = (char	*)s;
+	f = (char *)s;
 	i = 0;
 	while (*f != '\0')
 	{
@@ -57,6 +57,15 @@ static int	ft_count_words(const char *s, char c)
 	return (i);
 }
 
+static void	ft_walk_word(char *a, char c, int *j)
+{
+	while (*a != c && *a != '\0')
+	{
+		j++;
+		a++;
+	}	
+}
+
 static void	ft_allocword(char const *s, char c, int count_words,
 char **new_word)
 {
@@ -68,26 +77,24 @@ char **new_word)
 	a = (char *)s;
 	i = 0;
 	while (i < count_words)
+	{
 		while (*a != '\0')
 		{
 			if (*a != c)
 			{
 				j = 0;
 				f = a;
-				while (*a != c && *a != '\0')
-				{
-					j++;
-					a++;
-				}
+				ft_walk_word(&a, c, &j);
 				new_word[i++] = ft_strbuild(f, 0, j);
 			}
 			else
 				a++;
 		}
+	}
 	new_word[i] = NULL;
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**new_word;
 	int		count_words;

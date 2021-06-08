@@ -6,11 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 14:29:57 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/30 00:38:35 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:19:00 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c >= 'a' && c <= 'z') ? c - 32 : c;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

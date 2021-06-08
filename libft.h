@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftJake.h                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 15:16:49 by lbarreta          #+#    #+#             */
-/*   Updated: 2020/02/14 14:07:26 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:23:44 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 ** STRUCT PARA FUNÇÕES BÔNUS
 */
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -43,7 +43,7 @@ void				*ft_bzero(void *b, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 
 void				*ft_memccpy(void *str_dest,
-					const void *str_src, int c, size_t n);
+						const void *str_src, int c, size_t n);
 
 void				*ft_memmove(void *dest, const void *src, size_t n);
 
@@ -62,7 +62,7 @@ char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 
 char				*ft_strnstr(const char *haystack,
-					const char *needle, size_t len);
+						const char *needle, size_t len);
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
@@ -131,6 +131,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
+						void (*del)(void *));
 
 #endif

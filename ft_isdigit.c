@@ -6,11 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 23:29:12 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/29 23:47:23 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 21:48:37 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return (!(c >= '0' && c <= '9')) ? 0 : 1;
+	if (!(c >= '0' && c <= '9'))
+		return (0);
+	return (1);
 }

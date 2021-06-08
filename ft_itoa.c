@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 01:58:44 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/16 13:34:17 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 21:49:04 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		cont_num(int n)
+static int	cont_num(int n)
 {
 	int				i;
 	unsigned int	nb;
@@ -33,7 +33,7 @@ static int		cont_num(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*s;
 	int				num;

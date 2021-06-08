@@ -6,13 +6,13 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 14:20:52 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/01/29 19:01:22 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:01:49 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

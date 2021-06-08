@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 15:21:22 by jaqrodri          #+#    #+#             */
-/*   Updated: 2020/02/04 15:35:42 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/07 22:10:32 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (lst == NULL)
