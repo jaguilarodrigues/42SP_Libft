@@ -6,15 +6,16 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 23:52:02 by jaqrodri          #+#    #+#             */
-/*   Updated: 2021/06/07 21:54:18 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/23 21:10:19 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int	ft_isalnum(int c)
 {
-	if (!((c >= 'a' && c <= 'z')
-			|| (c >= 'A' && c <= 'Z')
-			|| (c >= '0' && c <= '9')))
-		return (0);
-	return (1);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') \
+	 || (c >= '0' && c <= '9'))
+		return (1);
+	return (0);
 }

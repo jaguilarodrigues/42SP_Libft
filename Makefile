@@ -6,7 +6,7 @@
 #    By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/29 14:54:07 by jaqrodri          #+#    #+#              #
-#    Updated: 2020/08/15 19:40:37 by jaqrodri         ###   ########.fr        #
+#    Updated: 2021/06/08 20:52:22 by jaqrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,17 @@ OBJECTS = $(SRCS:.c=.o)
 OBJECTS_BONUS = $(SRCS_BONUS:.c=.o)
 
 INCLUDES = ./
+
 all: $(NAME)
+
 $(NAME):
-	@gcc $(FLAGS) -I$(INCLUDES) -c $(SRCS)
+	@clang $(FLAGS) -I$(INCLUDES) -c $(SRCS)
 	@ar -rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJECTS)
 
 bonus: $(OBJECTS) $(OBJECTS_BONUS)
 	@ar -rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)

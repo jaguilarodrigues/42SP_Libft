@@ -6,7 +6,7 @@
 /*   By: jaqrodri <jaqrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 03:38:36 by jaqrodri          #+#    #+#             */
-/*   Updated: 2021/06/07 22:47:45 by jaqrodri         ###   ########.fr       */
+/*   Updated: 2021/06/08 19:38:19 by jaqrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static int	ft_count_words(const char *s, char c)
 	return (i);
 }
 
-static void	ft_walk_word(char *a, char c, int *j)
+static void	ft_walk_word(char **a, char c, int *j)
 {
-	while (*a != c && *a != '\0')
+	while (**a != c && **a != '\0')
 	{
 		j++;
 		a++;
